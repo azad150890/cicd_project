@@ -17,7 +17,6 @@ resource "azurerm_service_plan" "plan" {
 
 module "webapp" {
   source   = "../../modules/webapp"
-
   name     = "app-dev-xyz123"
   location = azurerm_resource_group.rg.location
   rg_name  = azurerm_resource_group.rg.name
