@@ -133,7 +133,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Build App
-        run: dotnet publish app/src -c Release -o publish
+        run: dotnet publish app/src/WebApp.csproj -c Release -o publish
 
       - name: Azure Login
         uses: azure/login@v2
