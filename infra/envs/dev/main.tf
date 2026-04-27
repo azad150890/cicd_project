@@ -4,7 +4,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "rg-dev"
-  location = "Central India"
+  location = "CentralIndia"
 }
 
 resource "azurerm_service_plan" "plan" {
