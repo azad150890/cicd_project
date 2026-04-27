@@ -14,6 +14,7 @@ resource "azurerm_service_plan" "plan" {
   os_type             = "Linux"
   sku_name            = "B1"
 }
+
 module "webapp" {
   source   = "../../modules/webapp"
   name     = "app-dev-xyz123"
