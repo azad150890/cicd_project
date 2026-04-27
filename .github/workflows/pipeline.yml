@@ -127,13 +127,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.0.x'
 
-      - name: Build App
-        run: dotnet publish app/src/WebApp.csproj -c Release -o publish
+      - uses: actions/setup-dotnet@v4
+        with:
+            dotnet-version: 8.0.x
+
+      - run: dotnet --info
+
+      - run: dotnet nuget locals all --clear
+
+      - run: dotnet restore app/src/WebApp.csproj
+
+      - run: dotnet build app/src/WebApp.csproj -c Release --no-restore
+
+      - run: dotnet publish app/src/WebApp.csproj -c Release -o publish --no-build
 
       - name: Azure Login
         uses: azure/login@v2
