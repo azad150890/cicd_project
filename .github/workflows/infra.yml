@@ -19,6 +19,7 @@ jobs:
           echo "repo: ${{ github.repository }}"
           echo "ref: ${{ github.ref }}"
 
+          
       - name: Azure Login (OIDC)
         uses: azure/login@v2
         with:
